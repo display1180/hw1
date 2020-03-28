@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 class App extends Component {
+  cong = 2;
   id = 1;
   state = {
     username: '',
@@ -23,16 +24,22 @@ class App extends Component {
     });
     this.id += 1;
   };
+
   isSafe = () => {
+    var result = true;
     var {password, username} = this.state;
   
     let a = password.length > 6;
-    console.log(password);
-    console.log(username);
-    let b = password.includes(username) && false;
-    
-    console.log(b);
-    return  !a || b;
+    let b = password.includes(username) !== true;
+    let c = username.includes("@") ;
+    let d = password.toLowerCase() !== password ? true : false;
+    console.log(a,b,c,d);
+
+    result = !a || !b || !c || d;
+    let lastResult = (!result) || username == '' || password == '';
+    console.log(result);
+    console.log(lastResult);
+    return  lastResult;
      
   }
   render() {
