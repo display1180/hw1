@@ -40,6 +40,9 @@ class App extends Component {
     console.log(result);
     console.log(lastResult);
     return  lastResult;
+
+    //학생 코멘트
+    //setState로 변경하고 싶습니다. (코드가 중구난방인것 같은데 시간이 있으면 변경해보겠습니다.)
      
   }
   render() {
