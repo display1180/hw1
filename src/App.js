@@ -26,10 +26,14 @@ class App extends Component {
   isSafe = () => {
     var {password, username} = this.state;
   
-    let a = password.length < 6;
-    let b = password.includes(username);
-    return  a && b;
+    let a = password.length > 6;
+    console.log(password);
+    console.log(username);
+    let b = password.includes(username) && false;
     
+    console.log(b);
+    return  !a || b;
+     
   }
   render() {
     const {username, password, list} = this.state;
